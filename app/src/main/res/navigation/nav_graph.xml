@@ -4,6 +4,7 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/nav_graph"
             app:startDestination="@id/loginFragment">
-    <activity android:id="@+id/loginFragment" android:name="fr.thibault.spacedim.LoginFragment"
-              android:label="fr.thibault.spacedim.LoginFragment" tools:layout="@layout/fragment_login"/>
+    <fragment android:id="@+id/loginFragment" android:name="fr.thibault.spacedim.LoginFragment"
+              android:label="fragment_login" tools:layout="@layout/fragment_login"/>
+    <fragment android:id="@+id/placeholder"/>
 </navigation>
