@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".FullWaitingRoomFragment">
+
+
+        <TextView
+                android:id="@+id/waitingRoomTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/full_waiting_room_title"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/titleFontSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TextContrastCheck" app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <RadioButton
+                android:id="@+id/isActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/socket_active"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/waitingRoomTitle"
+                app:layout_constraintVertical_bias="0.072"
+                tools:ignore="TextContrastCheck" android:buttonTint="@android:color/black"/>
+        <Button
+                android:id="@+id/joinGameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_700"
+                android:text="@string/is_ready"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/isActive"
+                app:layout_constraintVertical_bias="0.07999998" android:textColor="@android:color/white"/>
+
+        <TextView
+                android:id="@+id/roomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/debug_room_name"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/joinGameButton"
+                app:layout_constraintVertical_bias="0.0"/>
+
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/firstPlayerCard"
+                android:name="fr.thibault.spacedim.PlayerCardFragment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout="@layout/fragment_player_card"
+                app:layout_constraintTop_toBottomOf="@+id/roomName"/>
+
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/secondPlayerCard"
+                android:name="fr.thibault.spacedim.PlayerCardFragment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstPlayerCard"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout="@layout/fragment_player_card"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

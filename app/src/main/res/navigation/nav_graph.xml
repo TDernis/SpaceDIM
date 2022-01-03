@@ -2,9 +2,61 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/nav_graph"
             app:startDestination="@id/loginFragment">
-    <fragment android:id="@+id/loginFragment" android:name="fr.thibault.spacedim.LoginFragment"
-              android:label="fragment_login" tools:layout="@layout/fragment_login"/>
-    <fragment android:id="@+id/placeholder"/>
+    <fragment
+            android:id="@+id/loginFragment"
+            android:name="fr.thibault.spacedim.LoginFragment"
+            android:label="@string/app_bar_login"
+            tools:layout="@layout/fragment_login">
+        <action
+                android:id="@+id/action_loginFragment_to_emptyWaitingRoomFragment"
+                app:destination="@id/emptyWaitingRoomFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/emptyWaitingRoomFragment"
+            android:name="fr.thibault.spacedim.EmptyWaitingRoomFragment"
+            android:label="@string/app_bar_empty_waiting_room"
+            tools:layout="@layout/fragment_empty_waiting_room">
+        <action
+                android:id="@+id/action_emptyWaitingRoomFragment_to_fullWaitingRoomFragment"
+                app:destination="@id/fullWaitingRoomFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/fullWaitingRoomFragment"
+            android:name="fr.thibault.spacedim.FullWaitingRoomFragment"
+            android:label="@string/app_bar_waiting_room"
+            tools:layout="@layout/fragment_full_waiting_room">
+        <action
+                android:id="@+id/action_fullWaitingRoomFragment_to_gameFragment"
+                app:destination="@id/gameFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/gameFragment"
+            android:name="fr.thibault.spacedim.GameFragment"
+            android:label="@string/app_bar_game"
+            tools:layout="@layout/fragment_game">
+        <action
+                android:id="@+id/action_gameFragment_to_gameOverFragment"
+                app:destination="@id/gameOverFragment"
+                app:popUpToInclusive="false"/>
+        <action android:id="@+id/action_gameFragment_to_gameWonFragment" app:destination="@id/gameWonFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/gameOverFragment"
+            android:name="fr.thibault.spacedim.GameOverFragment"
+            android:label="@string/app_bar_game_over"
+            tools:layout="@layout/fragment_game_over">
+        <action
+                android:id="@+id/action_gameOverFragment_to_loginFragment"
+                app:destination="@id/loginFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/gameWonFragment"
+            android:name="fr.thibault.spacedim.GameWonFragment"
+            android:label="@string/app_bar_game_won"
+            tools:layout="@layout/fragment_game_won">
+        <action
+                android:id="@+id/action_gameWonFragment_to_loginFragment"
+                app:destination="@id/loginFragment"/>
+    </fragment>
 </navigation>

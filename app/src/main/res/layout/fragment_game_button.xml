@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameButtonFragment">
+
+
+    <Button
+            android:id="@+id/buttonAction"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="22dp"
+            android:background="@drawable/rectangle"
+            android:text="@string/degazer_button"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/purple_500"/>
+</layout>
